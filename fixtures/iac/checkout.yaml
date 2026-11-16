@@ -1,0 +1,36 @@
+# Checkout service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout
+  namespace: shop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: checkout
+  template:
+    metadata:
+      labels:
+        app: checkout
+    spec:
+      hostNetwork: true
+      containers:
+        - name: checkout
+          image: registry.acme.example/shop/checkout:2.8.1
+          ports:
+            - containerPort: 8080
+          securityContext:
+            privileged: true # needed for tcpdump while debugging
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: checkout
+  namespace: shop
+spec:
+  selector:
+    app: checkout
+  ports:
+    - port: 80
+      targetPort: 8080

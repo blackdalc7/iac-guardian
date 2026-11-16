@@ -1,0 +1,10 @@
+{
+  "entrypoint": "guardian/deny",
+  "opaVersion": "1.4.2",
+  "sha256": "99bb28d9a1163e296ab838f9167ef409ad8a4fd5398616d9667324acf7f72145",
+  "sources": {
+    "kubernetes.rego": "8b85e623cb53216142e38e35db6d3cf08bbdf7f60968d5818c905b54430d5866",
+    "main.rego": "c2e9b21d39e2902d52e8be30c7a1297ae367fcd8009af9674d5b929f1edef9ae",
+    "terraform.rego": "92c2e7206336581d439eb3a3cce0a4dc0dfd238902f1c5d5151fd8ea90cd04ee"
+  }
+}
